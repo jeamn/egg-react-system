@@ -17,7 +17,7 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [];
-
+  
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
@@ -31,6 +31,11 @@ module.exports = appInfo => {
       }
     }
   };
+  // 跨域配置
+  userConfig.security = {
+    csrf: false
+  }
+  config.cors = { origin: '*', allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH' }
 
   return {
     ...config,

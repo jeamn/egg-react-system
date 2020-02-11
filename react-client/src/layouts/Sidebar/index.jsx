@@ -21,7 +21,7 @@ class Sidebar extends React.Component {
       >
         <div className="logo">
           <span>
-            <Icon type="fire" style={{ color: 'yellow' }} /> 明 文 系 统
+            <Icon type="fire" style={{ color: 'yellow' }} /> Rothschild
             </span>
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
@@ -59,11 +59,6 @@ class Sidebar extends React.Component {
           <Menu.Item key="6">
             <Icon type="github" />
             <span className="nav-text"><Link to="/evaluation" style={{color: '#fff'}}>开发与评价</Link></span>
-          </Menu.Item>
-
-          <Menu.Item key="7">
-            <Icon type="cloud" />
-            <span className="nav-text"><Link to="/interface" style={{color: '#fff'}}>接 口 模 块</Link></span>
           </Menu.Item>
 
         </Menu>

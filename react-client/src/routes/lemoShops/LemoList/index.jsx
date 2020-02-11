@@ -10,8 +10,8 @@ class LemoList extends React.Component {
       shopList: []
     }
   }
-  componentDidMount = () => {
-    let res = this.props.getShops().payload
+  componentDidMount = async () => {
+    let res = (await this.props.getShops()).payload
     if (res.code !== 0) return
     let shopList = this.state.shopList
     shopList = res.data
@@ -24,7 +24,7 @@ class LemoList extends React.Component {
       <div>
         乐墨店铺列表
           {this.state.shopList.map((i, index) => ((
-            <div style={{'border-bottom': '2px solid gray'}} key={index}>
+            <div style={{'borderBottom': '2px solid gray'}} key={index}>
               <div>店铺名称：{i.name}</div>
               <div>店铺 ID：{i.id}</div>
               <div>创建时间：{i.created}</div>

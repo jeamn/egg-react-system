@@ -7,7 +7,6 @@ import InnerList from './routes/innerShops/InnerList'
 import CreateShop from './routes/innerShops/CreateShop'
 import Permission from './routes/Permission'
 import Evaluation from './routes/Evaluation'
-import Interface from './routes/Interface'
 
 import './App.css'
 import Sidebar from './layouts/Sidebar'
@@ -47,7 +46,6 @@ function App() {
               <Route path="/createShop" exact component={CreateShop} />
               <Route path="/permission" exact component={Permission} />
               <Route path="/evaluation" exact component={Evaluation} />
-              <Route path="/interface" exact component={Interface} />
               <Redirect to="/" />
             </Switch>
           </Content>

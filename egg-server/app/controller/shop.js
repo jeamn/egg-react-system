@@ -1,11 +1,15 @@
-'use strict';
+// 'use strict';
 
-const Controller = require('egg').Controller;
+const { Controller } = require('egg');
 
 class ShopController extends Controller {
   async index() {
-    const { ctx } = this;
-    ctx.body = 'ShopController';
+    const { ctx, service } = this;
+    let shops = await service.shop.list()
+    ctx.body = {
+      code: 0,
+      data: shops
+    };
   }
 }
 
