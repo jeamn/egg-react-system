@@ -4,7 +4,7 @@ import history from '../history'
 import lemoShops from './lemoShops'
 let reducers = {
   lemoShops,
-    router: connectRouter(history)
+  router: connectRouter(history)
 }
 let reducer = combineReducers(reducers)
 

@@ -1,9 +1,9 @@
-const { Service } = require('egg')
+const BaseService = require('./base')
 
-class ShopService extends Service {
-  async list() {
-    let result = await this.app.mysql.select('shop2')
-    return result
+class ShopService extends BaseService {
+  constructor(...args){
+    super(...args)
+    this.entity = 'shop'
   }
 }
 
