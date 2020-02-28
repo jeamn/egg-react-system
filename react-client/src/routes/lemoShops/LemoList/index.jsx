@@ -14,7 +14,7 @@ class LemoList extends React.Component {
     let res = (await this.props.getShops()).payload
     if (res.code !== 0) return
     let shopList = this.state.shopList
-    shopList = res.data
+    shopList = res.data.list
     this.setState({
       shopList
     })

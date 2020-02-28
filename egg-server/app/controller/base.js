@@ -9,9 +9,13 @@ class BaseController extends Controller {
   error(error){
     this.ctx.body = {code: 1, error}
   }
+  // 支持查询和分页
   async index() {
     const { ctx,service } = this;
-    let result = await service[this.entity].select()
+    let {pageNum, pageSize, ...where} = ctx.query
+    let currentpageNum = isNaN(pageNum) ? 1 : parseInt(pageNum)
+    let currentpageSize = isNaN(pageSize) ? 20 : parseInt(pageSize)
+    let result = await service[this.entity].select(currentpageNum, currentpageSize, where)
     this.success(result)
   }
   async create() {
